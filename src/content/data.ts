@@ -45,6 +45,14 @@ export const CATEGORIES: Category[] = [
     description: "Pflichten und passende Systeme",
     intro: "Arbeitszeiterfassung: Was Arbeitgeber wissen müssen und welche Systeme dafür infrage kommen.",
   },
+  {
+    slug: "digitalisierung-datenschutz",
+    name: "Digitalisierung & Datenschutz",
+    icon: "Cloud",
+    description: "KI, Cloud-Software, DSGVO und Bürokratieabbau",
+    intro:
+      "Digitalisierung betrifft jeden Fachbereich: Cloud-Software, KI-Funktionen und digitale Abläufe sollen Zeit sparen, werfen aber Fragen zu Datenschutz und Auftragsverarbeitung auf. Hier finden Sie Beiträge zu Zahlen, Pflichten und einem sinnvollen Einstieg.",
+  },
 ];
 
 export const categoryBySlug = (slug: string) => CATEGORIES.find((c) => c.slug === slug);

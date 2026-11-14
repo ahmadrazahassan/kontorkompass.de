@@ -326,10 +326,14 @@ export default async function Home() {
         <div className="container-page">
           <SectionHeading eyebrow="Themenwelten" title="Alles zu Ihrem Fachbereich." />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.map((c) => {
+            {CATEGORIES.map((c, i) => {
               const inCat = newest.filter((d) => d.category === c.slug);
+              // A last card that would sit alone in its row spans the free columns, so the grid always closes evenly.
+              const last = i === CATEGORIES.length - 1;
+              const n = CATEGORIES.length;
+              const span = last ? `${n % 2 === 1 ? "sm:col-span-2" : ""} ${n % 3 === 1 ? "lg:col-span-3" : "lg:col-span-1"}` : "";
               return (
-                <div key={c.slug} className="group flex flex-col border border-line bg-white p-7 transition-shadow hover:shadow-[var(--shadow-overlay)]" style={{ borderRadius: 14 }}>
+                <div key={c.slug} className={`group flex flex-col border border-line bg-white p-7 transition-shadow hover:shadow-[var(--shadow-overlay)] ${span}`} style={{ borderRadius: 14 }}>
                   <div className="flex items-start justify-between">
                     <Icon name={c.icon} size={30} className="text-brand-500" />
                     <span className="font-data text-[12px] uppercase tracking-wider text-ink-500">{inCat.length} Beiträge</span>

@@ -224,7 +224,7 @@ export interface Category {
   id: number;
   name: string;
   slug: string;
-  icon: 'Calculator' | 'Receipt' | 'Money' | 'IdentificationBadge' | 'Package' | 'Clock';
+  icon: 'Calculator' | 'Receipt' | 'Money' | 'IdentificationBadge' | 'Package' | 'Clock' | 'Cloud';
   description: string;
   intro: string;
   order?: number | null;

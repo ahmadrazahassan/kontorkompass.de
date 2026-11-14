@@ -80,7 +80,7 @@ const articles: Article[] = [
     title: "Zahlungsverzug: Was Unternehmen bei säumigen Kunden tun können und wie Software das Mahnwesen übernimmt",
     seoTitle: "Zahlungsverzug: Rechte kennen, Mahnwesen automatisieren",
     description: "Kunden zahlen zu spät? Was § 286 und § 288 BGB im B2B regeln, welche Verzugszinsen und Pauschalen gelten und wie Software Mahnungen automatisch verschickt.",
-    category: "buchhaltung-finanzen",
+    category: "rechnungsstellung-e-rechnung",
     readingMinutes: 9,
     lead: "Offene Rechnungen sind für kleine Unternehmen mehr als ein Ärgernis: Sie binden Liquidität, die für Gehälter, Material und Steuern fehlt. Oft liegt das Problem nicht beim Kunden allein, sondern im eigenen Ablauf: Rechnungen gehen spät raus, Zahlungseingänge werden nicht geprüft, Mahnungen vergessen. Dieser Artikel erklärt, welche Rechte Sie im B2B haben und wie Sie das Mahnwesen mit Software zuverlässig organisieren.",
     sourceNumbers: [22, 21, 6, 5, 13, 4],

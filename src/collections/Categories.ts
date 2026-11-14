@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { baseAccess, hooks } from "./shared";
 
-export const ICONS = ["Calculator", "Receipt", "Money", "IdentificationBadge", "Package", "Clock"] as const;
+export const ICONS = ["Calculator", "Receipt", "Money", "IdentificationBadge", "Package", "Clock", "Cloud"] as const;
 
 export const Categories: CollectionConfig = {
   slug: "categories",
