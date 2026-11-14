@@ -66,7 +66,7 @@ export default function Page() {
         Art. 6 Abs. 1 lit. f DSGVO.
       </p>
       <p>
-        Die Datenbank betreibt für uns die Supabase Pte. Ltd. (Singapur) in einem Rechenzentrum in Frankfurt am Main. Mit Supabase besteht ein Vertrag über die
+        Die Datenbank betreibt für uns die Supabase Pte. Ltd. (Singapur) in einem Rechenzentrum in Irland (Region West EU). Mit Supabase besteht ein Vertrag über die
         Auftragsverarbeitung nach Art. 28 DSGVO. Die Datenbank und ihre Sicherungen liegen in der EU. Für Support und Betrieb kann Supabase Daten an verbundene
         Unternehmen und Dienstleister in Singapur und in den USA übermitteln. Grundlage dafür sind EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
       </p>

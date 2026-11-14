@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildConfig } from "payload";
@@ -19,10 +20,26 @@ import { NewsletterConsents } from "./src/collections/NewsletterConsents";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Production: set DATABASE_URL to a Postgres connection string (EU region, e.g. Frankfurt).
-// Local development falls back to a SQLite file.
-const db = process.env.DATABASE_URL?.startsWith("postgres")
-  ? postgresAdapter({ pool: { connectionString: process.env.DATABASE_URL } })
+// Production: DATABASE_URL = Supabase Postgres (West EU / Ireland), via the Supavisor pooler.
+// Without DATABASE_URL the site falls back to the local SQLite file.
+// Schema changes go through migrations in src/migrations (push: false), never through dev auto-push:
+//   pnpm payload migrate:create <name>   then   pnpm payload migrate
+const databaseUrl = process.env.DATABASE_URL ?? "";
+const db = databaseUrl.startsWith("postgres")
+  ? postgresAdapter({
+      pool: {
+        connectionString: databaseUrl,
+        // Supabase signs its pooler certificate with its own root ("Supabase Root 2021 CA", certs/supabase-root-ca.pem),
+        // which is not in Node's default CA list. Pin it so the connection stays encrypted AND verified.
+        ssl: databaseUrl.includes("supabase.com")
+          ? { ca: fs.readFileSync(path.resolve(dirname, "certs/supabase-root-ca.pem"), "utf8"), rejectUnauthorized: true }
+          : undefined,
+        // Use the transaction pooler (port 6543): next build runs ~20 workers in parallel and Vercel opens one pool per function.
+        max: 3,
+      },
+      push: false,
+      migrationDir: path.resolve(dirname, "src/migrations"),
+    })
   : sqliteAdapter({ client: { url: process.env.SQLITE_URL ?? "file:./kontorkompass.db" } });
 
 export default buildConfig({
