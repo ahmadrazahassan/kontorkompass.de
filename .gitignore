@@ -1,0 +1,20 @@
+node_modules
+.next
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+
+# Secrets: only the example file belongs in git
+.env
+.env.*
+!.env.example
+
+# Local SQLite database and backups (content + accounts + newsletter consents: never in a public repo)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Payload uploads at the project root (stored by the CMS, not in git).
+# Anchored on purpose: public/media/ holds the website's images and must be committed.
+/media/

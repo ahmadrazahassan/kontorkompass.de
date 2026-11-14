@@ -1,0 +1,272 @@
+[
+  {
+    "id": "G04",
+    "file": "/media/global/home-fokus-e-rechnung.svg",
+    "alt": "Drei gestaffelte Dokumente als Symbol für die schrittweise Einführung der E-Rechnung"
+  },
+  {
+    "id": "G05a",
+    "file": "/media/global/methodik-01-quellen.svg",
+    "alt": "Symbol für Primärquellen"
+  },
+  {
+    "id": "G05b",
+    "file": "/media/global/methodik-02-zahlen.svg",
+    "alt": "Symbol für belegte Zahlen"
+  },
+  {
+    "id": "G05c",
+    "file": "/media/global/methodik-03-pruefen.svg",
+    "alt": "Symbol für regelmäßige Prüfung"
+  },
+  {
+    "id": "G05d",
+    "file": "/media/global/methodik-04-transparent.svg",
+    "alt": "Symbol für gekennzeichnete Werbelinks"
+  },
+  {
+    "id": "G06",
+    "file": "/media/global/newsletter-illustration.svg",
+    "alt": "Briefumschlag mit Dokumenten als Symbol für den Newsletter"
+  },
+  {
+    "id": "R02",
+    "file": "/media/ratgeber/ratgeber-e-rechnungen-empfangen-hero.svg",
+    "alt": "Briefumschlag, aus dem strukturierte Datenblöcke in eine Ablage fließen"
+  },
+  {
+    "id": "R03",
+    "file": "/media/ratgeber/ratgeber-xrechnung-oder-zugferd-hero.svg",
+    "alt": "Zwei Dokumente im Vergleich: eines nur aus Datenblöcken, eines als Seite mit eingebetteter Datenebene"
+  },
+  {
+    "id": "R05",
+    "file": "/media/ratgeber/ratgeber-e-rechnungen-gobd-konform-archivieren-hero.svg",
+    "alt": "Ordner in einem geordneten Regal, einer mit Schutzsymbol, als Bild für revisionssichere Archivierung"
+  },
+  {
+    "id": "R09",
+    "file": "/media/ratgeber/ratgeber-gobd-einfach-erklaert-hero.svg",
+    "alt": "Geordnete Dokumentblöcke in einem Rahmen als Symbol für ordnungsgemäße Buchführung"
+  },
+  {
+    "id": "R10",
+    "file": "/media/ratgeber/ratgeber-euer-oder-bilanz-hero.svg",
+    "alt": "Zwei Wege von einem Startpunkt: ein einfacher und ein mehrstufiger"
+  },
+  {
+    "id": "R12",
+    "file": "/media/ratgeber/ratgeber-datev-export-hero.svg",
+    "alt": "Datenblöcke wandern über eine Verbindung von einem Büro zum nächsten"
+  },
+  {
+    "id": "R13",
+    "file": "/media/ratgeber/ratgeber-skr03-oder-skr04-hero.svg",
+    "alt": "Zwei unterschiedlich strukturierte Raster als Symbol für zwei Kontenrahmen"
+  },
+  {
+    "id": "R19",
+    "file": "/media/ratgeber/ratgeber-lohnabrechnung-auslagern-oder-intern-hero.svg",
+    "alt": "Dokument wird von einem Unternehmen an einen externen Partner übergeben"
+  },
+  {
+    "id": "R21",
+    "file": "/media/ratgeber/ratgeber-digitale-personalakte-hero.svg",
+    "alt": "Personalakte aus Ebenen mit Schutzsymbol"
+  },
+  {
+    "id": "R22",
+    "file": "/media/ratgeber/ratgeber-urlaubsverwaltung-digitalisieren-hero.svg",
+    "alt": "Kalenderraster mit markierten Urlaubstagen"
+  },
+  {
+    "id": "R26",
+    "file": "/media/ratgeber/ratgeber-erp-kosten-hero.svg",
+    "alt": "Gestapelte Blöcke unterschiedlicher Höhe als Symbol für Kostenbestandteile"
+  },
+  {
+    "id": "R27",
+    "file": "/media/ratgeber/ratgeber-cloud-erp-oder-on-premises-hero.svg",
+    "alt": "Serverschrank und schwebende Ebenen als Gegenüberstellung von On-Premises und Cloud"
+  },
+  {
+    "id": "R30",
+    "file": "/media/ratgeber/ratgeber-lastenheft-fuer-erp-software-hero.svg",
+    "alt": "Strukturiertes Dokument mit Checkboxen als Symbol für ein Lastenheft"
+  },
+  {
+    "id": "M02",
+    "file": "/media/magazin/magazin-bmf-schreiben-zur-e-rechnung-hero.svg",
+    "alt": "Amtliches Schreiben mit Siegel als Symbol für ein BMF-Schreiben"
+  },
+  {
+    "id": "M03",
+    "file": "/media/magazin/magazin-ki-in-der-buchhaltung-hero.svg",
+    "alt": "Ungeordnete Belege werden zu geordneten Datenblöcken"
+  },
+  {
+    "id": "M04",
+    "file": "/media/magazin/magazin-cloud-software-und-dsgvo-hero.svg",
+    "alt": "Schutzschild vor Dokumentenebenen als Symbol für Datenschutz"
+  },
+  {
+    "id": "M07",
+    "file": "/media/magazin/magazin-jahreswechsel-lohnabrechnung-2027-hero.svg",
+    "alt": "Umblätterndes Kalenderblatt als Symbol für den Jahreswechsel"
+  },
+  {
+    "id": "M08",
+    "file": "/media/magazin/magazin-abo-kosten-richtig-vergleichen-hero.svg",
+    "alt": "Drei unterschiedlich hohe Karten als Symbol für Preismodelle"
+  },
+  {
+    "id": "M09",
+    "file": "/media/magazin/magazin-schnittstellen-und-open-api-hero.svg",
+    "alt": "Verbundene Blöcke als Symbol für Software-Schnittstellen"
+  },
+  {
+    "id": "M12",
+    "file": "/media/magazin/magazin-datenmigration-beim-softwarewechsel-hero.svg",
+    "alt": "Datenblöcke wechseln von einem Raster in ein anderes"
+  },
+  {
+    "id": "M14",
+    "file": "/media/magazin/magazin-nis2-und-kleinere-unternehmen-hero.svg",
+    "alt": "Schutzschild vor einem einfachen Netzwerk als Symbol für IT-Sicherheit"
+  },
+  {
+    "id": "S01",
+    "file": "/media/spots/leer-suche.svg",
+    "alt": "Lupe über einem leeren Raster: keine Treffer"
+  },
+  {
+    "id": "S02",
+    "file": "/media/spots/fehler-404.svg",
+    "alt": "Treppe, deren oberste Stufe fehlt: Seite nicht gefunden"
+  },
+  {
+    "id": "S03",
+    "file": "/media/spots/fehler-500.svg",
+    "alt": "Verrutschtes Dokument als Symbol für einen technischen Fehler"
+  },
+  {
+    "id": "S04",
+    "file": "/media/spots/erfolg-newsletter.svg",
+    "alt": "Briefumschlag mit Häkchen: Anmeldung fast abgeschlossen"
+  },
+  {
+    "id": "S05",
+    "file": "/media/spots/leer-liste.svg",
+    "alt": "Leere Karten: keine Einträge für diese Auswahl"
+  },
+  {
+    "id": "S06",
+    "file": "/media/spots/download-checkliste.svg",
+    "alt": "Checkliste zum Herunterladen"
+  },
+  {
+    "id": "S07",
+    "file": "/media/spots/kontakt.svg",
+    "alt": "Zwei Sprechblasen als Symbol für Kontakt"
+  },
+  {
+    "id": "S08",
+    "file": "/media/spots/transparenz.svg",
+    "alt": "Ausgewogene Blöcke als Symbol für redaktionelle Unabhängigkeit"
+  },
+  {
+    "id": "G01",
+    "file": "/media/global/home-hero-kontur.svg",
+    "alt": ""
+  },
+  {
+    "id": "G02",
+    "file": "/media/global/home-hero-kontur-mobile.svg",
+    "alt": ""
+  },
+  {
+    "id": "K01",
+    "file": "/media/categories/kategorie-buchhaltung-finanzen.svg",
+    "alt": ""
+  },
+  {
+    "id": "K02",
+    "file": "/media/categories/kategorie-rechnungsstellung-e-rechnung.svg",
+    "alt": ""
+  },
+  {
+    "id": "K03",
+    "file": "/media/categories/kategorie-lohn-gehalt.svg",
+    "alt": ""
+  },
+  {
+    "id": "K04",
+    "file": "/media/categories/kategorie-hr-personal.svg",
+    "alt": ""
+  },
+  {
+    "id": "K05",
+    "file": "/media/categories/kategorie-erp-warenwirtschaft.svg",
+    "alt": ""
+  },
+  {
+    "id": "K06",
+    "file": "/media/categories/kategorie-zeiterfassung.svg",
+    "alt": ""
+  },
+  {
+    "id": "K07",
+    "file": "/media/categories/kategorie-crm-vertrieb.svg",
+    "alt": ""
+  },
+  {
+    "id": "K08",
+    "file": "/media/categories/kategorie-marketing-software.svg",
+    "alt": ""
+  },
+  {
+    "id": "K09",
+    "file": "/media/categories/kategorie-projektmanagement.svg",
+    "alt": ""
+  },
+  {
+    "id": "K10",
+    "file": "/media/categories/kategorie-zusammenarbeit.svg",
+    "alt": ""
+  },
+  {
+    "id": "K11",
+    "file": "/media/categories/kategorie-e-commerce.svg",
+    "alt": ""
+  },
+  {
+    "id": "K12",
+    "file": "/media/categories/kategorie-dokumentenmanagement.svg",
+    "alt": ""
+  },
+  {
+    "id": "K13",
+    "file": "/media/categories/kategorie-it-sicherheit-datenschutz.svg",
+    "alt": ""
+  },
+  {
+    "id": "M01",
+    "file": "/media/magazin/magazin-e-rechnung-alle-fristen-bis-2028-hero.svg",
+    "alt": ""
+  },
+  {
+    "id": "M05",
+    "file": "/media/magazin/magazin-digitalisierung-im-mittelstand-studien-hero.svg",
+    "alt": ""
+  },
+  {
+    "id": "M13",
+    "file": "/media/magazin/magazin-20-begriffe-rund-um-die-e-rechnung-hero.svg",
+    "alt": ""
+  },
+  {
+    "id": "G03",
+    "file": "/media/global/home-panel-hintergrund.avif",
+    "alt": ""
+  }
+]

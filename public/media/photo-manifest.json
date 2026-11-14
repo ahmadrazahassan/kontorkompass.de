@@ -1,0 +1,389 @@
+[
+  {
+    "id": "R01",
+    "title": "E-Rechnung ab 2027",
+    "alt": "Mitarbeiterin in der Buchhaltung eines Elektrobetriebs prüft am Laptop eine Rechnung, daneben Papierrechnungen",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-e-rechnung-ab-2027-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-e-rechnung-ab-2027-hero.webp"
+  },
+  {
+    "id": "R04",
+    "title": "E-Rechnung für Kleinunternehmer",
+    "alt": "Selbstständiger Tischler prüft in seiner Werkstatt etwas auf einem Tablet",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-e-rechnung-fuer-kleinunternehmer-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-e-rechnung-fuer-kleinunternehmer-hero.webp"
+  },
+  {
+    "id": "R06",
+    "title": "E-Rechnungssoftware: Auswahl & Kosten",
+    "alt": "Zwei Mitarbeitende vergleichen an einem Stehtisch Notizen neben einem Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-e-rechnungssoftware-auswahl-und-kosten-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-e-rechnungssoftware-auswahl-und-kosten-hero.webp"
+  },
+  {
+    "id": "R07",
+    "title": "Buchhaltungssoftware für kleine Unternehmen",
+    "alt": "Inhaberin einer Bäckerei erledigt nach Ladenschluss die Buchhaltung am Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-buchhaltungssoftware-fuer-kleine-unternehmen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-buchhaltungssoftware-fuer-kleine-unternehmen-hero.webp"
+  },
+  {
+    "id": "R08",
+    "title": "Buchhaltung selbst machen oder Steuerbüro",
+    "alt": "Steuerberater und Unternehmerin besprechen Unterlagen in einer Steuerkanzlei",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-buchhaltung-selbst-machen-oder-steuerbuero-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-buchhaltung-selbst-machen-oder-steuerbuero-hero.webp"
+  },
+  {
+    "id": "R11",
+    "title": "Umsatzsteuervoranmeldung per ELSTER",
+    "alt": "Hände tippen auf einem Laptop an einem aufgeräumten Schreibtisch",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-umsatzsteuervoranmeldung-per-elster-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-umsatzsteuervoranmeldung-per-elster-hero.webp"
+  },
+  {
+    "id": "R14",
+    "title": "Online-Buchhaltung in der Cloud",
+    "alt": "Mitarbeiter in der Finanzbuchhaltung arbeitet im Homeoffice am Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-online-buchhaltung-in-der-cloud-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-online-buchhaltung-in-der-cloud-hero.webp"
+  },
+  {
+    "id": "R15",
+    "title": "Lohnabrechnung selbst machen",
+    "alt": "Büroleiterin eines Dachdeckerbetriebs bereitet am Schreibtisch Unterlagen vor",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-lohnabrechnung-selbst-machen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-lohnabrechnung-selbst-machen-hero.webp"
+  },
+  {
+    "id": "R16",
+    "title": "Lohnabrechnungssoftware",
+    "alt": "Fachkraft für Lohnabrechnung arbeitet in einem Büro am Bildschirm",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-lohnabrechnungssoftware-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-lohnabrechnungssoftware-hero.webp"
+  },
+  {
+    "id": "R17",
+    "title": "Ersten Mitarbeiter einstellen",
+    "alt": "Inhaberin eines Handwerksbetriebs übergibt einem neuen Mitarbeiter eine Mappe",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-ersten-mitarbeiter-einstellen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-ersten-mitarbeiter-einstellen-hero.webp"
+  },
+  {
+    "id": "R18",
+    "title": "Minijob richtig abrechnen",
+    "alt": "Aushilfe räumt am Morgen Regale in einem kleinen Lebensmittelgeschäft ein",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-minijob-richtig-abrechnen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-minijob-richtig-abrechnen-hero.webp"
+  },
+  {
+    "id": "R20",
+    "title": "HR-Software für den Mittelstand",
+    "alt": "HR-Team bespricht sich in einem Besprechungsraum",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-hr-software-fuer-den-mittelstand-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-hr-software-fuer-den-mittelstand-hero.webp"
+  },
+  {
+    "id": "R23",
+    "title": "Arbeitszeiterfassung: Pflichten",
+    "alt": "Mitarbeiterin hält am Eingang einer Produktionshalle ihren Ausweis an ein Zeiterfassungsterminal",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-arbeitszeiterfassung-pflichten-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-arbeitszeiterfassung-pflichten-hero.webp"
+  },
+  {
+    "id": "R24",
+    "title": "Zeiterfassungssystem auswählen",
+    "alt": "Bauleiter prüft auf der Baustelle etwas auf einem robusten Smartphone",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-zeiterfassungssystem-auswaehlen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-zeiterfassungssystem-auswaehlen-hero.webp"
+  },
+  {
+    "id": "R25",
+    "title": "ERP-Einführung im Mittelstand",
+    "alt": "Projektteam plant die ERP-Einführung an einer Wand mit Haftnotizen",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-erp-einfuehrung-im-mittelstand-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-erp-einfuehrung-im-mittelstand-hero.webp"
+  },
+  {
+    "id": "R28",
+    "title": "Warenwirtschaftssystem für den Handel",
+    "alt": "Lagermitarbeiter scannt im Großhandelslager einen Karton",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-warenwirtschaftssystem-fuer-den-handel-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-warenwirtschaftssystem-fuer-den-handel-hero.webp"
+  },
+  {
+    "id": "R29",
+    "title": "ERP für Fertigungsunternehmen",
+    "alt": "Maschinenbedienerin prüft in einer Fertigungshalle ein Terminal neben einer CNC-Maschine",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-erp-fuer-fertigungsunternehmen-hero.avif",
+    "webp": "/media/ratgeber/ratgeber-erp-fuer-fertigungsunternehmen-hero.webp"
+  },
+  {
+    "id": "M06",
+    "title": "Steuerbüro und Unternehmen digital",
+    "alt": "Steuerberaterin führt in ihrem Büro ein Videogespräch",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-steuerbuero-und-unternehmen-digital-hero.avif",
+    "webp": "/media/magazin/magazin-steuerbuero-und-unternehmen-digital-hero.webp"
+  },
+  {
+    "id": "M10",
+    "title": "Rechnungseingang automatisieren",
+    "alt": "Mitarbeiter scannt Papierrechnungen mit einem Dokumentenscanner ein",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-rechnungseingang-automatisieren-hero.avif",
+    "webp": "/media/magazin/magazin-rechnungseingang-automatisieren-hero.webp"
+  },
+  {
+    "id": "M15",
+    "title": "Testphasen richtig nutzen",
+    "alt": "Mitarbeiterin testet am Schreibtisch eine Software und notiert Ergebnisse",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-testphasen-richtig-nutzen-hero.avif",
+    "webp": "/media/magazin/magazin-testphasen-richtig-nutzen-hero.webp"
+  },
+  {
+    "id": "T01",
+    "title": "Über uns",
+    "alt": "Redaktionsschreibtisch mit Rechercheunterlagen und Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/trust/ueber-uns-hero.avif",
+    "webp": "/media/trust/ueber-uns-hero.webp"
+  },
+  {
+    "id": "T02",
+    "title": "Methodik",
+    "alt": "Person gleicht eine gedruckte Quelle mit Notizen ab",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/trust/methodik-hero.avif",
+    "webp": "/media/trust/methodik-hero.webp"
+  },
+  {
+    "id": "N01",
+    "title": "E-Rechnungen empfangen",
+    "alt": "Mitarbeiterin einer Hausverwaltung sortiert am Stehtisch die eingehende Post, daneben ein Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-e-rechnungen-empfangen-foto.avif",
+    "webp": "/media/ratgeber/ratgeber-e-rechnungen-empfangen-foto.webp"
+  },
+  {
+    "id": "N02",
+    "title": "E-Rechnungen GoBD-konform archivieren",
+    "alt": "Mitarbeiter zieht im Archivraum einer Druckerei einen Ordner aus einem Rollregal",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-e-rechnungen-archivieren-foto.avif",
+    "webp": "/media/ratgeber/ratgeber-e-rechnungen-archivieren-foto.webp"
+  },
+  {
+    "id": "N03",
+    "title": "GoBD einfach erklärt",
+    "alt": "Inhaber einer Fahrradwerkstatt sortiert im Büro Belege in Ordner und versieht einen mit Datumsstempel",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-gobd-einfach-erklaert-foto.avif",
+    "webp": "/media/ratgeber/ratgeber-gobd-einfach-erklaert-foto.webp"
+  },
+  {
+    "id": "N04",
+    "title": "ERP-Kosten",
+    "alt": "Zwei Personen vergleichen in einer Gärtnerei ausgedruckte Kostenaufstellungen und einen Taschenrechner",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-erp-kosten-foto.avif",
+    "webp": "/media/ratgeber/ratgeber-erp-kosten-foto.webp"
+  },
+  {
+    "id": "N05",
+    "title": "E-Rechnung: Alle Fristen bis 2028",
+    "alt": "Mitarbeiterin markiert an einem großen Jahresplaner an der Bürowand einen Termin",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-e-rechnung-fristen-foto.avif",
+    "webp": "/media/magazin/magazin-e-rechnung-fristen-foto.webp"
+  },
+  {
+    "id": "N06",
+    "title": "Kleinunternehmerregelung",
+    "alt": "Inhaberin eines kleinen Friseursalons geht nach Ladenschluss am Empfangstresen Belege durch",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/ratgeber/ratgeber-kleinunternehmerregelung-foto.avif",
+    "webp": "/media/ratgeber/ratgeber-kleinunternehmerregelung-foto.webp"
+  },
+  {
+    "id": "N07",
+    "title": "Belegchaos: Belege digitalisieren",
+    "alt": "Floristin fotografiert im Hinterzimmer ihres Blumenladens einen Kassenbon aus einem Karton voller Belege",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-belegchaos-foto.avif",
+    "webp": "/media/magazin/magazin-belegchaos-foto.webp"
+  },
+  {
+    "id": "N08",
+    "title": "Zahlungsverzug und Mahnwesen",
+    "alt": "Inhaber eines Cateringbetriebs prüft im Büro eine Liste offener Rechnungen",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-zahlungsverzug-foto.avif",
+    "webp": "/media/magazin/magazin-zahlungsverzug-foto.webp"
+  },
+  {
+    "id": "N09",
+    "title": "E-Rechnung 2027: Unternehmen nicht vorbereitet",
+    "alt": "Drei Mitarbeitende eines Verpackungsherstellers planen an einem Whiteboard mit Haftnotizen die Umstellung",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-e-rechnung-nicht-vorbereitet-foto.avif",
+    "webp": "/media/magazin/magazin-e-rechnung-nicht-vorbereitet-foto.webp"
+  },
+  {
+    "id": "N10",
+    "title": "Excel am Limit",
+    "alt": "Inhaber einer Kaffeerösterei vergleicht markierte Tabellenausdrucke an seinem Schreibtisch",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-excel-am-limit-foto.avif",
+    "webp": "/media/magazin/magazin-excel-am-limit-foto.webp"
+  },
+  {
+    "id": "N11",
+    "title": "Insellösungen und Datensilos",
+    "alt": "Disponentin einer Spedition gleicht Angaben aus zwei Ordnern an ihrem Arbeitsplatz ab",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-insellosungen-foto.avif",
+    "webp": "/media/magazin/magazin-insellosungen-foto.webp"
+  },
+  {
+    "id": "N12",
+    "title": "Lager ohne Überblick",
+    "alt": "Inhaber einer Eisenwarenhandlung scannt im Lager eine Kleinteile-Packung aus einer Schublade",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-lager-foto.avif",
+    "webp": "/media/magazin/magazin-lager-foto.webp"
+  },
+  {
+    "id": "N13",
+    "title": "Lohnabrechnung und Meldepflichten",
+    "alt": "Lohnsachbearbeiterin eines Reinigungsunternehmens prüft ausgedruckte Gehaltsabrechnungen",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-lohnabrechnung-foto.avif",
+    "webp": "/media/magazin/magazin-lohnabrechnung-foto.webp"
+  },
+  {
+    "id": "N14",
+    "title": "Urlaubsplanung digital",
+    "alt": "Praxismanagerin einer Zahnarztpraxis plant am Empfang die Abwesenheiten des Teams",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-urlaubsplanung-foto.avif",
+    "webp": "/media/magazin/magazin-urlaubsplanung-foto.webp"
+  },
+  {
+    "id": "N15",
+    "title": "Onboarding und Nachweisgesetz",
+    "alt": "Büroleiterin eines Architekturbüros richtet am ersten Arbeitstag den Arbeitsplatz eines neuen Mitarbeiters ein",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-onboarding-foto.avif",
+    "webp": "/media/magazin/magazin-onboarding-foto.webp"
+  },
+  {
+    "id": "N16",
+    "title": "Überstunden und Arbeitszeitkonten",
+    "alt": "Koch trägt am frühen Morgen in einer Restaurantküche seine Arbeitszeit am Tablet ein",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-ueberstunden-foto.avif",
+    "webp": "/media/magazin/magazin-ueberstunden-foto.webp"
+  },
+  {
+    "id": "N17",
+    "title": "KI im Mittelstand",
+    "alt": "Buchhalter eines Autohauses vergleicht im Büro über dem Verkaufsraum eine Papierrechnung mit dem Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-ki-mittelstand-foto.avif",
+    "webp": "/media/magazin/magazin-ki-mittelstand-foto.webp"
+  },
+  {
+    "id": "N18",
+    "title": "Cloud-Software und Datenschutz",
+    "alt": "Geschäftsführerin eines ambulanten Pflegedienstes liest im Büro aufmerksam einen ausgedruckten Vertrag",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-cloud-datenschutz-foto.avif",
+    "webp": "/media/magazin/magazin-cloud-datenschutz-foto.webp"
+  },
+  {
+    "id": "N19",
+    "title": "Zusammenarbeit mit dem Steuerbüro",
+    "alt": "Physiotherapeut scannt nach Praxisschluss Belege ein und spricht per Videogespräch mit seinem Steuerbüro",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-steuerbuero-foto.avif",
+    "webp": "/media/magazin/magazin-steuerbuero-foto.webp"
+  },
+  {
+    "id": "N20",
+    "title": "Bürokratie im Mittelstand",
+    "alt": "Metzgermeister sitzt abends im Büro seines Betriebs vor einem hohen Stapel Formulare",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-buerokratie-foto.avif",
+    "webp": "/media/magazin/magazin-buerokratie-foto.webp"
+  },
+  {
+    "id": "N21",
+    "title": "Raus aus der Kleinunternehmerregelung",
+    "alt": "Grafikdesigner sortiert in seinem Atelier Rechnungen und Notizen neben einem Laptop",
+    "caption": "Symbolbild (KI-generiert)",
+    "credit": "KI-generiert",
+    "avif": "/media/magazin/magazin-kleinunternehmergrenze-foto.avif",
+    "webp": "/media/magazin/magazin-kleinunternehmergrenze-foto.webp"
+  }
+]
