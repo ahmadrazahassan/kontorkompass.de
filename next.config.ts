@@ -15,6 +15,8 @@ const SECURITY_HEADERS = [
 const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Unknown URLs get the German 404 in src/app/global-not-found.tsx (two root layouts: site and Payload admin).
+  experimental: { globalNotFound: true },
   async headers() {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];
   },

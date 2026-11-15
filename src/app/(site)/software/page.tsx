@@ -37,7 +37,7 @@ export default async function Page() {
     <>
       <PageHeader
         title="Business-Software im Überblick."
-        lead="Ausführliche Tests mit allen Tarifen in Euro, Kostenanalysen nach Teamgröße und einheitlichen Prüfkriterien. Wählen Sie Produkte zum Vergleich oder lassen Sie sich vom Software-Finder helfen."
+        lead="Ausführliche Software-Profile mit allen Tarifen in Euro, Kostenanalysen nach Teamgröße und einheitlichen Prüfkriterien. Wählen Sie Produkte zum Vergleich oder lassen Sie sich vom Software-Finder helfen."
         eyebrow="Software"
         crumbs={[{ label: "Software" }]}
       />

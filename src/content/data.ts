@@ -229,7 +229,7 @@ export const SOFTWARE: Software[] = [
       ["Einstiegspreis", "25,00 € pro Monat zzgl. MwSt. (regulär)"],
       ["Testphase", "Starter: 14 Tage, ohne Kreditkarte · Essentials: 30 Tage, mit Zahlungsdaten"],
       ["Kündigung", "jederzeit zum Ende des laufenden Abrechnungsmonats"],
-      ["E-Rechnung", "Einlesen von XRechnung und ZUGFeRD in beiden Tarifen laut Anbieter; das Erstellen beschreibt die Produktseite nicht ausdrücklich"],
+      ["E-Rechnung", "Einlesen von XRechnung und ZUGFeRD in beiden Tarifen laut Anbieter; Sage führt Sage Active unter seinen E-Rechnungs-Lösungen"],
       ["Steuer & Steuerbüro", "USt-Voranmeldung per ELSTER, Export im DATEV-Format (Essentials)"],
       ["Kontenrahmen", "SKR03 und SKR04"],
       ["GoBD", "laut Anbieter GoBD-konform („zertifizierte Software“)"],

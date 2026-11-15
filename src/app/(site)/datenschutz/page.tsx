@@ -80,12 +80,19 @@ export default function Page() {
       <h2>5. Schriftarten</h2>
       <p>Wir binden alle Schriftarten lokal von unserem eigenen Server ein. Beim Besuch dieser Website werden dafür keine Daten an Google oder andere Anbieter übertragen.</p>
 
-      <h2>6. Kontakt per E-Mail</h2>
+      <h2>6. Kontakt per E-Mail und Kontaktformular</h2>
       <p>
         Wenn Sie uns per E-Mail schreiben, verarbeiten wir Ihre E-Mail-Adresse, Ihren Namen (falls angegeben) und den Inhalt Ihrer Nachricht, um Ihre Anfrage zu
         beantworten. Rechtsgrundlage ist unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO) beziehungsweise, wenn Ihre Anfrage
         auf einen Vertrag zielt, Art. 6 Abs. 1 lit. b DSGVO. Wir löschen die Daten, sobald die Anfrage abschließend bearbeitet ist und keine gesetzlichen
-        Aufbewahrungspflichten entgegenstehen. Ein Kontaktformular setzen wir nicht ein.
+        Aufbewahrungspflichten entgegenstehen.
+      </p>
+      <p>
+        Auf der Seite <a href="/kontakt">Kontakt</a> können Sie uns auch über ein Formular schreiben. Dabei verarbeiten wir Ihre E-Mail-Adresse, Ihre Nachricht und,
+        falls angegeben, Ihren Namen und einen Betreff. Die Angaben werden nicht in unserer Datenbank gespeichert, sondern als E-Mail an unsere Redaktion
+        weitergeleitet. Für diesen Versand setzen wir den Dienst Resend ein (siehe Abschnitt 7); Resend verarbeitet die Nachricht dabei in unserem Auftrag.
+        Rechtsgrundlage und Löschung richten sich nach dem vorstehenden Absatz. Zum Schutz vor Missbrauch begrenzen wir die Zahl der Nachrichten je IP-Adresse;
+        die IP-Adresse wird dafür nur kurzzeitig im Arbeitsspeicher gehalten und nicht dauerhaft gespeichert.
       </p>
 
       <h2>7. Newsletter</h2>

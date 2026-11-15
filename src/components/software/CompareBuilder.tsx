@@ -100,8 +100,8 @@ export function CompareBuilder({ items, filters }: { items: CompareItem[]; filte
                   Vergleichen
                 </button>
                 <Link href={`/software/${s.slug}`} className="btn btn-outline btn-sm">
-                  <span className="btn-label" data-text="Test">
-                    <span>Test</span>
+                  <span className="btn-label" data-text="Profil">
+                    <span>Profil</span>
                   </span>
                 </Link>
               </div>

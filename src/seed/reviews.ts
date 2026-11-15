@@ -40,7 +40,7 @@ const REVIEWS: Record<string, { basis: "users" | "employees" | "none"; verdict: 
   "sage-active": {
     basis: "users",
     verdict:
-      "Sage Active bündelt Angebote, Rechnungen, Buchhaltung und im Tarif Essentials auch die Lohnabrechnung in einer Cloud-Lösung für kleine Unternehmen. Die Preise sind transparent veröffentlicht, Zusatzkosten für Nutzende und Rechnungen klar geregelt. Das Rechenzentrum liegt laut Sage in Deutschland (Microsoft Azure). Ob E-Rechnungen im Tarif Starter auch erstellt werden, sollten Sie vor dem Kauf klären.",
+      "Sage Active bündelt Angebote, Rechnungen, Buchhaltung und im Tarif Essentials auch die Lohnabrechnung in einer Cloud-Lösung für kleine Unternehmen. Die Preise sind transparent veröffentlicht, Zusatzkosten für Nutzende und Rechnungen klar geregelt. Das Rechenzentrum liegt laut Sage in Deutschland (Microsoft Azure). Sage führt Sage Active unter seinen E-Rechnungs-Lösungen; den Versand einer E-Rechnung probieren Sie am besten in der kostenlosen Testphase aus.",
     plans: {
       Starter: { unit: "flat", includedUsers: 5, extraUserMonthly: 5, promoMonthly: 12.5, promoMonths: 3 },
       Essentials: { unit: "flat", includedUsers: 10, extraUserMonthly: 10, includedEmployees: 2, extraEmployeeMonthly: 3, promoMonthly: 24.5, promoMonths: 3 },
@@ -49,7 +49,7 @@ const REVIEWS: Record<string, { basis: "users" | "employees" | "none"; verdict: 
       [CRIT.prices, "yes", "Beide Tarife mit Preisen und Zusatzkosten auf der Produktseite"],
       [CRIT.trial, "yes", "Starter 14 Tage ohne Kreditkarte, Essentials 30 Tage mit Zahlungsdaten"],
       [CRIT.term, "yes", "Kündigung zum Ende des laufenden Abrechnungsmonats"],
-      [CRIT.einv, "partial", "Einlesen von XRechnung und ZUGFeRD in beiden Tarifen; Erstellen auf der Produktseite nicht ausdrücklich beschrieben"],
+      [CRIT.einv, "partial", "Einlesen von XRechnung und ZUGFeRD in beiden Tarifen; von Sage als E-Rechnungs-Lösung geführt, das Erstellen ist auf der Produktseite nicht im Detail beschrieben"],
       [CRIT.datev, "yes", "Export im DATEV-Format (Essentials)"],
       [CRIT.data, "yes", "Microsoft Azure, Rechenzentrum in Deutschland (Unterauftragsverarbeiter-Liste von Sage)"],
       [CRIT.avv, "unknown", "Auf der Produktseite nicht erwähnt"],
@@ -83,7 +83,7 @@ const REVIEWS: Record<string, { basis: "users" | "employees" | "none"; verdict: 
       h2("Grenzen und offene Punkte"),
       ul([
         "Starter enthält keine Buchhaltung und keine Lohnabrechnung",
-        "Ob E-Rechnungen auch im Format XRechnung erstellt werden, beschreibt die Produktseite nicht ausdrücklich. Lassen Sie sich das vor dem Kauf schriftlich bestätigen.",
+        "Beim Thema E-Rechnung beschreibt die Produktseite im Detail das Einlesen. Sage führt Sage Active zugleich unter seinen Lösungen zum Erstellen, Versenden und Verarbeiten von E-Rechnungen. Probieren Sie den Versand in der kostenlosen Testphase aus.",
         "Die Produktseite selbst nennt keinen Serverstandort; erst die Unterauftragsverarbeiter-Liste von Sage zeigt Microsoft Azure in Deutschland, dazu Dienste mit Verarbeitung in den USA",
         "Für mehrere Gesellschaften verweist Sage selbst auf Sage Intacct, für Lager und Produktion auf ERP-Lösungen",
       ]),

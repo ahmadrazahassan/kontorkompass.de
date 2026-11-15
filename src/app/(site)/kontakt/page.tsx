@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TextPage } from "@/components/content/PageShell";
+import { ContactForm } from "@/components/content/ContactForm";
 import { Avatar } from "@/components/ui/Avatar";
 import { LinkedInLogo } from "@/components/ui/LinkedInLogo";
 import { OPERATOR, SITE } from "@/lib/site";
@@ -31,6 +32,9 @@ export default function Page() {
         </a>
       </p>
       <p>Wir antworten in der Regel innerhalb weniger Werktage.</p>
+      <h2>Nachricht schreiben</h2>
+      <p>Sie können uns auch direkt über dieses Formular schreiben. Ihre Nachricht geht per E-Mail an die Redaktion.</p>
+      <ContactForm />
     </TextPage>
   );
 }

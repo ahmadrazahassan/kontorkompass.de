@@ -270,7 +270,7 @@ export async function SoftwareTable({ items, showCta = true }: { items: Software
               {showCta && (
                 <td className="text-right">
                   <Button href={`/software/${s.slug}`} variant="outline" size="sm">
-                    Zum Test
+                    Zum Profil
                   </Button>
                 </td>
               )}
