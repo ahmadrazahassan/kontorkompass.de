@@ -3,6 +3,10 @@
  * An entry only appears while its software's /go link is an active Werbelink (isAffiliate in the CMS), so the block can never show a non-partner as an ad.
  * Copy uses only facts from the vendors' own pages that are also in the software profiles.
  */
+
+/** Switch for the whole "Partnerangebote" block (home, /software, topic pages, articles). Hidden on user request 16.11.2026; set to true to show it again. */
+export const SHOW_PARTNER_OFFERS = false;
+
 export const PARTNER_OFFERS: { slug: string; pitch: string }[] = [
   {
     slug: "easybill",

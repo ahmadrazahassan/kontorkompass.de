@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getCategories, getSoftwareList } from "@/lib/cms";
 import { formatEur } from "@/lib/format";
-import { PARTNER_OFFERS } from "@/lib/partners";
+import { PARTNER_OFFERS, SHOW_PARTNER_OFFERS } from "@/lib/partners";
 import { Button } from "@/components/ui/Button";
 import { PartnerLogo, vendorKey } from "@/components/ui/PartnerLogo";
 import { AffiliateLinkNote } from "@/components/ui/Affiliate";
@@ -15,6 +15,8 @@ type Opts = { category?: string; limit?: number; exclude?: string };
 
 /** Partner offers that would show for these options (also used to decide whether a page needs the Werbelink notice). */
 export async function getPartnerOffers({ category, limit = 4, exclude }: Opts = {}) {
+  // While hidden, return nothing: the block renders nothing and articles don't add the Werbelink notice for it.
+  if (!SHOW_PARTNER_OFFERS) return [];
   const all = await getSoftwareList();
   return PARTNER_OFFERS.map((o) => ({ o, s: all.find((x) => x.slug === o.slug) }))
     .filter((x): x is { o: (typeof PARTNER_OFFERS)[number]; s: NonNullable<typeof x.s> } => Boolean(x.s?.isAffiliate && x.s.affiliateSlug))
