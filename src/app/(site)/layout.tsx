@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DEFAULT_OG_IMAGE, SITE } from "@/lib/site";
-import { getCategories, getDocs, getSoftwareList } from "@/lib/cms";
+import { getCategories, getDocs, getSoftwareList, getTopicCategories } from "@/lib/cms";
 
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], variable: "--font-bricolage", display: "swap" });
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#ffffff" };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const [categories, docs, software] = await Promise.all([getCategories(), getDocs(), getSoftwareList()]);
+  const [allCategories, categories, docs, software] = await Promise.all([getCategories(), getTopicCategories(), getDocs(), getSoftwareList()]);
   const counts = Object.fromEntries(categories.map((c) => [c.slug, docs.filter((d) => d.category === c.slug).length]));
-  const menuSoftware = software.map((s) => ({ slug: s.slug, name: s.name, category: categories.find((c) => c.slug === s.categories[0])?.name ?? "" }));
+  const menuSoftware = software.map((s) => ({ slug: s.slug, name: s.name, category: allCategories.find((c) => c.slug === s.categories[0])?.name ?? "" }));
   return (
     <html lang="de" className={`${bricolage.variable} ${fira.variable} ${saira.variable}`}>
       <body>

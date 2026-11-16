@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const SOFTWARE = await getSoftwareList();
-  const items: FinderItem[] = SOFTWARE.map(({ slug, name, vendor, categories, plans, scenarioBasis, checks, trial, verdict }) => ({
+  const items: FinderItem[] = SOFTWARE.map(({ slug, name, vendor, categories, plans, scenarioBasis, checks, trial, verdict, isAffiliate }) => ({
     slug,
     name,
     vendor,
@@ -23,6 +23,7 @@ export default async function Page() {
     checks,
     trial,
     verdict,
+    isAffiliate,
   }));
   const verified = SOFTWARE.map((s) => s.verified).sort().reverse()[0];
 

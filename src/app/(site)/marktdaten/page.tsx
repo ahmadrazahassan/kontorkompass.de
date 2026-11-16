@@ -20,7 +20,7 @@ import {
 } from "@/content/marketData";
 import { getSoftwareList } from "@/lib/cms";
 import { formatEur } from "@/lib/format";
-import { checkScore, planCost } from "@/lib/pricing";
+import { checkScore, formatPoints, planCost } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "Marktdaten: Mittelstand, KI, Cloud und Software-Preise in Zahlen",
@@ -276,9 +276,9 @@ export default async function Page() {
               <HeatGrid cols={TEAM.map(String)} rows={byEmployees} format={eur} log ariaLabel="Monatskosten nach Beschäftigten" />
               <p className="mt-3 text-[13px] text-ink-500">Personio: Mindestabnahme von 420 € pro Monat, daher gleiche Kosten bis etwa 55 Beschäftigte.</p>
             </Card>
-            <Card title="Prüfkriterien-Check" sub="Anteil öffentlich belegter Kriterien, 0–100" tone="light" source="Eigene Auswertung, siehe Methodik" className="lg:col-span-5">
+            <Card title="Prüfkriterien" sub="Erfüllte Kriterien je Produkt, teilweise erfüllte zählen halb" tone="light" source="Eigene Auswertung, siehe Methodik" className="lg:col-span-5">
               <ul className="space-y-3">
-                {scores.map(({ s, score }) => (
+                {scores.map(({ s, score, points, total }) => (
                   <li key={s.slug}>
                     <Link href={`/software/${s.slug}`} className="flex items-center gap-3 no-underline">
                       <span className="flex w-[78px] shrink-0 items-center">
@@ -288,7 +288,9 @@ export default async function Page() {
                       <span className="h-2.5 flex-1 overflow-hidden bg-white" style={{ borderRadius: 4 }}>
                         <span className="block h-full" style={{ width: `${score}%`, background: score >= 60 ? "#006BFF" : "#7AB3FF", borderRadius: 4 }} />
                       </span>
-                      <span className="w-8 text-right font-data text-[13px] tabular-nums">{score}</span>
+                      <span className="w-12 text-right font-data text-[13px] tabular-nums">
+                        {formatPoints(points)}/{total}
+                      </span>
                     </Link>
                   </li>
                 ))}

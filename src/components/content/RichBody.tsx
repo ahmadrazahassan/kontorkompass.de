@@ -3,6 +3,7 @@ import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical
 import { Callout } from "./Blocks";
 import { Button } from "@/components/ui/Button";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
+import { AffiliateBadge, AffiliateLinkNote } from "@/components/ui/Affiliate";
 import { getCms } from "@/lib/cms";
 import { slugify } from "@/lib/format";
 
@@ -42,7 +43,10 @@ export async function AffiliateCtaBox({ softwareId, slug, text }: { softwareId?:
       <p className="t-eyebrow">{isAffiliate ? "Anzeige · Mit * gekennzeichnete Links sind Werbelinks" : "Software im Überblick"}</p>
       <div className="mt-3 flex items-center justify-between gap-4">
         <h3 className="t-h3">Passende Software</h3>
-        <PartnerLogo slug={sw.slug} height={20} maxWidth={110} tile={false} />
+        <span className="flex flex-wrap items-center justify-end gap-3">
+          {isAffiliate && <AffiliateBadge />}
+          <PartnerLogo slug={sw.slug} height={20} maxWidth={110} tile={false} />
+        </span>
       </div>
       <p className="mt-2 text-ink-700">
         <strong className="text-ink-950">{sw.name}:</strong> {text}
@@ -57,7 +61,7 @@ export async function AffiliateCtaBox({ softwareId, slug, text }: { softwareId?:
           Zum Software-Profil
         </Button>
       </div>
-      {isAffiliate && <p className="mt-3 text-[13px] text-ink-500">* Werbelink: Wir erhalten gegebenenfalls eine Provision. Für Sie entstehen keine Mehrkosten.</p>}
+      {isAffiliate && <AffiliateLinkNote long className="mt-3" />}
     </div>
   );
 }

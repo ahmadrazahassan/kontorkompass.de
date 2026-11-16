@@ -7,7 +7,7 @@ import { formatDate, formatDateShort, formatEur, formatMonthYear } from "@/lib/f
 import { Button } from "@/components/ui/Button";
 import { Thumbnail } from "@/components/ui/Thumbnail";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
-import { checkScore } from "@/lib/pricing";
+import { checkScore, formatPoints } from "@/lib/pricing";
 
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <p className={`t-eyebrow ${className}`}>{children}</p>;
@@ -55,7 +55,7 @@ export async function AffiliateDisclosure() {
     <aside className="flex gap-3 rounded-[12px] bg-surface-1 p-4 text-[14px] leading-relaxed text-ink-700">
       <Info size={20} weight="regular" aria-hidden className="mt-0.5 shrink-0 text-brand-700" />
       <p>
-        <strong className="font-medium text-ink-950">Hinweis:</strong> Dieser Beitrag enthält Werbelinks (mit * gekennzeichnet). Wenn Sie über einen solchen Link
+        <strong className="font-medium text-ink-950">Hinweis:</strong> Diese Seite enthält Werbelinks (mit * gekennzeichnet). Wenn Sie über einen solchen Link
         einen Vertrag abschließen, erhalten wir gegebenenfalls eine Provision. Für Sie entstehen keine Mehrkosten. Unsere Inhalte und Einschätzungen bleiben davon
         unabhängig. <Link href="/transparenz">So finanzieren wir uns</Link>
       </p>
@@ -265,7 +265,7 @@ export async function SoftwareTable({ items, showCta = true }: { items: Software
                 {s.entryPrice === null ? "auf Anfrage" : s.entryPrice === 0 ? "0 € (eingeschränkt)" : `ab ${formatEur(s.entryPrice)}`}
                 <span className="block text-[13px] text-ink-500">zzgl. MwSt.</span>
               </td>
-              <td className="whitespace-nowrap font-data">{s.checks?.length ? `${checkScore(s.checks).score} / 100` : "–"}</td>
+              <td className="whitespace-nowrap font-data">{s.checks?.length ? `${formatPoints(checkScore(s.checks).points)} / ${checkScore(s.checks).total} erfüllt` : "–"}</td>
               <td>{s.trial}</td>
               {showCta && (
                 <td className="text-right">
@@ -279,7 +279,7 @@ export async function SoftwareTable({ items, showCta = true }: { items: Software
         </tbody>
       </table>
       <p className="border-t border-line px-5 py-3 text-[13px] text-ink-500">
-        Preise laut Anbieter, zzgl. MwSt. Prüfkriterien: Anteil belegter Kriterien, siehe Methodik.
+        Preise laut Anbieter, zzgl. MwSt. Prüfkriterien: erfüllte zählen voll, teilweise erfüllte halb, siehe Methodik.
       </p>
     </div>
   );

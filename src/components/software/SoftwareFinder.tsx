@@ -5,9 +5,10 @@ import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowCounterClockwise, Check, CircleHalf, Question, X, ArrowsLeftRight } from "@phosphor-icons/react";
 import type { Check as CheckT, Software } from "@/content/data";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
+import { AffiliateBadge } from "@/components/ui/Affiliate";
 import { planCost } from "@/lib/pricing";
 
-export type FinderItem = Pick<Software, "slug" | "name" | "vendor" | "categories" | "plans" | "scenarioBasis" | "checks" | "trial" | "verdict">;
+export type FinderItem = Pick<Software, "slug" | "name" | "vendor" | "categories" | "plans" | "scenarioBasis" | "checks" | "trial" | "verdict" | "isAffiliate">;
 
 const AREAS = [
   { id: "buchhaltung", label: "Buchhaltung und Rechnungen", hint: "Belege, Rechnungen, E-Rechnung, USt", cats: ["buchhaltung-finanzen", "rechnungsstellung-e-rechnung"] },
@@ -141,7 +142,7 @@ export function SoftwareFinder({ items, verified }: { items: FinderItem[]; verif
               {results.map((r, i) => (
                 <li key={r.s.slug} className={`grid gap-6 border bg-white p-6 md:grid-cols-[1.1fr_1fr] md:p-8 ${i === 0 ? "border-brand-500 shadow-[var(--shadow-overlay)]" : "border-line"}`} style={{ borderRadius: 16 }}>
                   <div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       <span className="font-data text-[13px] text-ink-500">{String(i + 1).padStart(2, "0")}</span>
                       <PartnerLogo slug={r.s.slug} height={20} maxWidth={100} tile={false} />
                       {i === 0 && (
@@ -149,6 +150,7 @@ export function SoftwareFinder({ items, verified }: { items: FinderItem[]; verif
                           Beste Passung
                         </span>
                       )}
+                      {r.s.isAffiliate && <AffiliateBadge />}
                     </div>
                     <h3 className="mt-4 font-display text-[26px] font-semibold leading-tight tracking-[-0.015em]">{r.s.name}</h3>
                     <p className="text-[14px] text-ink-500">{r.s.vendor}</p>

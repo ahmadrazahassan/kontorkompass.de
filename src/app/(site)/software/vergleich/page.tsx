@@ -5,9 +5,10 @@ import { Breadcrumbs } from "@/components/content/Blocks";
 import { LineChart } from "@/components/charts/Charts";
 import { Button } from "@/components/ui/Button";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
+import { AffiliateBadge } from "@/components/ui/Affiliate";
 import { getCategories, getSoftwareList } from "@/lib/cms";
 import { formatDateShort, formatEur } from "@/lib/format";
-import { SCENARIO_POINTS, checkScore } from "@/lib/pricing";
+import { SCENARIO_POINTS, checkScore, criteriaLabel, formatPoints } from "@/lib/pricing";
 import { BASIS_LABEL, POPULAR_COMPARISONS, cheapestPaid, criteriaOrder, entryUnit, priceRange, statusOf } from "@/lib/compare";
 import type { Check as CheckT, Software } from "@/content/data";
 
@@ -62,7 +63,8 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
   const sharedCat = ready ? chosen[0].categories.find((c) => chosen.every((s) => s.categories.includes(c))) : undefined;
   const bases = new Set(chosen.map((s) => s.scenarioBasis ?? "users"));
   const criteria = criteriaOrder(chosen);
-  const scores = chosen.map((s) => (s.checks?.length ? checkScore(s.checks).score : null));
+  const crit = chosen.map((s) => (s.checks?.length ? checkScore(s.checks) : null));
+  const scores = crit.map((c) => c?.score ?? null);
   const bestScore = Math.max(...scores.map((x) => x ?? -1));
   // Products whose price does not depend on headcount in our data are left out of headcount highlights.
   const scalable = (s: Software) => (s.scenarioBasis ?? "users") !== "none";
@@ -132,10 +134,12 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
             )}
 
             {/* Product header cards */}
-            <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
+            {/* pt-3: the scroll container clips overflow, and the Werbepartner tab sits 11px above its card. */}
+            <div className="-mx-4 overflow-x-auto px-4 pt-3 md:mx-0 md:px-0">
               <div className="grid gap-3" style={{ gridTemplateColumns: cols }}>
                 {chosen.map((s, i) => (
-                  <div key={s.slug} className="flex flex-col border border-line bg-white p-5" style={{ borderRadius: 14 }}>
+                  <div key={s.slug} className="relative flex flex-col border border-line bg-white p-5" style={{ borderRadius: 14 }}>
+                    {s.isAffiliate && <AffiliateBadge tab />}
                     <div className="flex h-7 items-center justify-between">
                       <PartnerLogo slug={s.slug} height={20} maxWidth={100} tile={false} />
                       <span className="font-data text-[11px] uppercase tracking-wider text-ink-500">{catName(s.categories[0])}</span>
@@ -143,8 +147,8 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
                     <p className="mt-4 font-display text-[22px] font-semibold leading-tight tracking-[-0.015em]">{s.name}</p>
                     <p className="text-[13px] text-ink-500">{s.vendor}</p>
                     <div className="mt-4 flex items-baseline gap-1.5">
-                      <span className="font-data text-[40px] font-medium leading-none">{scores[i] ?? "–"}</span>
-                      <span className="font-data text-[14px] text-ink-500">/ 100 Kriterienwert</span>
+                      <span className="font-data text-[40px] font-medium leading-none">{crit[i] ? formatPoints(crit[i].points) : "–"}</span>
+                      <span className="font-data text-[14px] text-ink-500">/ {crit[i]?.total ?? 10} Kriterien erfüllt</span>
                     </div>
                     <div className="mt-5 flex flex-wrap gap-2">
                       <Button href={`/software/${s.slug}`} variant="outline" size="sm">
@@ -167,9 +171,12 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
             <div className="mt-6 grid gap-3 md:grid-cols-3">
               {[
                 {
-                  k: "Höchster Kriterienwert",
+                  k: "Meiste Kriterien erfüllt",
                   v: chosen.filter((_, i) => scores[i] === bestScore).map((s) => s.name).join(", "),
-                  d: `${bestScore} von 100 Punkten`,
+                  d: (() => {
+                    const c = crit[scores.indexOf(bestScore)];
+                    return c ? criteriaLabel(c) : "–";
+                  })(),
                 },
                 {
                   k: "Günstigster Einstieg",
@@ -306,11 +313,11 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
                     ))}
                     <tr>
                       <th scope="row" className="sticky left-0 z-10 !bg-surface-1 !text-[14.5px] !normal-case !tracking-normal text-ink-950" style={{ fontFamily: "var(--font-sans)" }}>
-                        Kriterienwert
+                        Kriterien erfüllt
                       </th>
                       {chosen.map((s, i) => (
                         <td key={s.slug} className="bg-surface-1 font-data text-[18px]">
-                          {scores[i] ?? "–"} <span className="text-[13px] text-ink-500">/ 100</span>
+                          {crit[i] ? formatPoints(crit[i].points) : "–"} <span className="text-[13px] text-ink-500">/ {crit[i]?.total ?? 10}</span>
                         </td>
                       ))}
                     </tr>
@@ -324,7 +331,10 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
               <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(auto-fit, minmax(260px, 1fr))` }}>
                 {chosen.map((s) => (
                   <article key={s.slug} className="flex flex-col border border-line p-6" style={{ borderRadius: 14 }}>
-                    <PartnerLogo slug={s.slug} height={18} maxWidth={90} tile={false} />
+                    <div className="flex min-h-6 flex-wrap items-center justify-between gap-3">
+                      <PartnerLogo slug={s.slug} height={18} maxWidth={90} tile={false} />
+                      {s.isAffiliate && <AffiliateBadge />}
+                    </div>
                     <h3 className="t-h3 mt-4">{s.name}</h3>
                     {s.verdict && <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{s.verdict}</p>}
                     {s.fits.length > 0 && (
@@ -356,7 +366,7 @@ export default async function Page({ searchParams }: { searchParams: SP }) {
             </Block>
 
             <p className="mt-10 text-[13px] text-ink-500">
-              * Nur Produkte, deren Preise nach Nutzenden oder Beschäftigten gestaffelt erfasst sind. Alle Preise laut Anbieter, zzgl. MwSt. Kosten sind Modellrechnungen aus veröffentlichten Preisbestandteilen und ersetzen kein Angebot. Kriterienwert: erfüllte Kriterien, teilweise erfüllte zählen zur Hälfte.{" "}
+              * Nur Produkte, deren Preise nach Nutzenden oder Beschäftigten gestaffelt erfasst sind. Alle Preise laut Anbieter, zzgl. MwSt. Kosten sind Modellrechnungen aus veröffentlichten Preisbestandteilen und ersetzen kein Angebot. Kriterien: erfüllte zählen voll, teilweise erfüllte halb; nicht öffentlich Angegebenes zählt nicht.{" "}
               <Link href="/methodik" className="text-brand-700">Methodik</Link>
             </p>
           </div>

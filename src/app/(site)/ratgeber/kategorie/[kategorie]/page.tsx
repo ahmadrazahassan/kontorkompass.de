@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/content/PageShell";
 import { GuideCard, SoftwareTable } from "@/components/content/Blocks";
 import { getCategories, getCategory, getDocs, getSoftwareList } from "@/lib/cms";
 import { Button } from "@/components/ui/Button";
+import { PartnerOffers } from "@/components/content/PartnerOffers";
 
 type Props = { params: Promise<{ kategorie: string }> };
 
@@ -15,7 +16,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { kategorie } = await params;
   const c = await getCategory(kategorie);
   if (!c) return {};
-  return { title: `${c.name}: Ratgeber & Software`, description: c.intro, alternates: { canonical: `/ratgeber/kategorie/${c.slug}` } };
+  // A topic without articles (e.g. a software-only category) stays reachable but is not indexed.
+  const hasDocs = (await getDocs()).some((d) => d.category === c.slug);
+  return {
+    title: `${c.name}: Ratgeber & Software`,
+    description: c.intro,
+    alternates: { canonical: `/ratgeber/kategorie/${c.slug}` },
+    ...(hasDocs ? {} : { robots: { index: false, follow: true } }),
+  };
 }
 
 export default async function Page({ params }: Props) {
@@ -56,6 +64,7 @@ export default async function Page({ params }: Props) {
           </div>
         </section>
       )}
+      <PartnerOffers category={c.slug} />
     </>
   );
 }

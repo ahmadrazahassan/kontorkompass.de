@@ -8,10 +8,11 @@ import { RichBody } from "@/components/content/RichBody";
 import { BarChart, DonutChart, LineChart } from "@/components/charts/Charts";
 import { Button } from "@/components/ui/Button";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
+import { AffiliateBadge, AffiliateLinkNote } from "@/components/ui/Affiliate";
 import { getSoftware, getSoftwareList } from "@/lib/cms";
 import { formatEur, formatMonthYear } from "@/lib/format";
 import { DEFAULT_OG_IMAGE, SITE } from "@/lib/site";
-import { SCENARIO_POINTS, VAT, basisLabel, checkScore, firstYearCost, planCost, pricedPlans } from "@/lib/pricing";
+import { SCENARIO_POINTS, VAT, basisLabel, checkScore, criteriaLabel, firstYearCost, formatPoints, planCost, pricedPlans } from "@/lib/pricing";
 import type { Check as CheckT, Software } from "@/content/data";
 
 type Props = { params: Promise<{ produkt: string }> };
@@ -106,7 +107,10 @@ export default async function Page({ params }: Props) {
         <Breadcrumbs items={[{ label: "Startseite", href: "/" }, { label: "Software", href: "/software" }, { label: s.name }]} />
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_340px] lg:items-end">
           <div>
-            <PartnerLogo slug={s.slug} height={30} maxWidth={170} />
+            <div className="flex flex-wrap items-center gap-4">
+              <PartnerLogo slug={s.slug} height={30} maxWidth={170} />
+              {s.isAffiliate && <AffiliateBadge />}
+            </div>
             <p className="t-eyebrow mt-6">Software-Profil · {s.vendor}</p>
             <h1 className="t-h1 mt-3">{s.name}: Preise, Kosten und Funktionen im Überblick</h1>
             <p className="t-lead mt-5 max-w-[62ch]">{s.summary}</p>
@@ -116,13 +120,15 @@ export default async function Page({ params }: Props) {
                 Kosten berechnen
               </Button>
             </div>
+            {/* Short form: the full Werbelink notice (AffiliateDisclosure) follows right below the header. */}
+            {s.isAffiliate && <AffiliateLinkNote className="mt-3" />}
           </div>
           {score && (
             <div className="panel p-6">
-              <p className="t-eyebrow">Prüfkriterien-Check</p>
+              <p className="t-eyebrow">Prüfkriterien</p>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="t-stat !text-[56px] text-brand-700">{score.score}</span>
-                <span className="font-data text-[18px] text-ink-500">/ 100</span>
+                <span className="t-stat !text-[56px] text-brand-700">{formatPoints(score.points)}</span>
+                <span className="font-data text-[18px] text-ink-500">/ {score.total} Kriterien erfüllt</span>
               </p>
               <div className="mt-3 flex h-2 overflow-hidden bg-surface-2" style={{ borderRadius: 4 }} aria-hidden>
                 <span style={{ width: `${(score.yes / score.total) * 100}%`, background: STATUS.yes.color }} />
@@ -130,7 +136,15 @@ export default async function Page({ params }: Props) {
                 <span style={{ width: `${(score.no / score.total) * 100}%`, background: STATUS.no.color }} />
               </div>
               <p className="mt-3 text-[14px] text-ink-700">
-                {score.yes} von {score.total} Kriterien erfüllt, {score.partial} teilweise, {score.unknown} nicht öffentlich angegeben.{" "}
+                {[
+                  `${score.yes} erfüllt`,
+                  score.partial ? `${score.partial} teilweise (zählen halb)` : "",
+                  score.no ? `${score.no} nicht enthalten` : "",
+                  score.unknown ? `${score.unknown} nicht öffentlich angegeben` : "",
+                ]
+                  .filter(Boolean)
+                  .join(", ")}
+                . Kein Gesamturteil über die Software.{" "}
                 <a href="#kriterien">Details</a>
               </p>
               <dl className="mt-5 grid grid-cols-2 gap-3 border-t border-line pt-4 text-[14px]">
@@ -174,7 +188,7 @@ export default async function Page({ params }: Props) {
                 <p className="mt-3 text-[17px] leading-relaxed text-ink-700">{s.verdict ?? s.summary}</p>
               </div>
               <div className="table-wrap mt-8">
-                <table className="data-table">
+                <table className="data-table kv">
                   <caption className="sr-only">{s.name} auf einen Blick</caption>
                   <tbody>
                     {s.facts.map(([k, v]) => (
@@ -346,10 +360,10 @@ export default async function Page({ params }: Props) {
                 </p>
                 <DonutChart
                   title="Ergebnis der Prüfkriterien"
-                  takeaway={`${score.score} von 100 Punkten: erfüllt zählt voll, teilweise zur Hälfte.`}
+                  takeaway={`${criteriaLabel(score)}: erfüllt zählt voll, teilweise zur Hälfte. ${score.unknown ? `${score.unknown} nicht öffentlich angegeben.` : ""}`.trim()}
                   source="Eigene Auswertung der Anbieterangaben"
-                  center={`${score.score}`}
-                  centerSub="von 100"
+                  center={formatPoints(score.points)}
+                  centerSub={`von ${score.total}`}
                   valueFormat={(v) => `${v} ${v === 1 ? "Kriterium" : "Kriterien"}`}
                   slices={[
                     { label: "erfüllt", value: score.yes, color: STATUS.yes.color },
@@ -428,7 +442,10 @@ export default async function Page({ params }: Props) {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {alternatives.map((a) => (
                   <Link key={a.slug} href={`/software/${a.slug}`} className="card flex flex-col gap-4 border border-line p-5 no-underline hover:border-brand-500" style={{ borderRadius: 12 }}>
-                    <PartnerLogo slug={a.slug} height={22} maxWidth={130} tile={false} />
+                    <span className="flex min-h-6 flex-wrap items-center justify-between gap-3">
+                      <PartnerLogo slug={a.slug} height={22} maxWidth={130} tile={false} />
+                      {a.isAffiliate && <AffiliateBadge />}
+                    </span>
                     <span>
                       <span className="card-title t-h3 block !text-[19px]">{a.name}</span>
                       <span className="mt-1 block text-[14px] text-ink-700">{a.summary}</span>
@@ -459,6 +476,7 @@ export default async function Page({ params }: Props) {
             <div className="sticky top-36 space-y-4">
               <div className="panel p-6">
                 <PartnerLogo slug={s.slug} height={22} maxWidth={130} tile={false} />
+                {s.isAffiliate && <AffiliateBadge className="mt-4" />}
                 <p className="t-h3 mt-4 !text-[19px]">{s.name}</p>
                 <dl className="mt-4 space-y-3 text-[15px]">
                   <div>
@@ -477,7 +495,7 @@ export default async function Page({ params }: Props) {
                   </div>
                 </dl>
                 <div className="mt-6">{cta("w-full")}</div>
-                {s.isAffiliate && <p className="mt-3 text-[13px] text-ink-500">* Werbelink</p>}
+                {s.isAffiliate && <AffiliateLinkNote className="mt-3" />}
               </div>
             </div>
           </aside>

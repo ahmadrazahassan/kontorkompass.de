@@ -25,8 +25,13 @@ export default function Page() {
       </p>
       <h2>Auswahl von Software</h2>
       <p>
-        Für alle Anbieter gelten dieselben Kriterien. Anbieter mit Partnerprogramm werden nicht bevorzugt. Übersichten sortieren wir nach dem Kriterienwert (siehe unten). Im
-        Software-Finder und im Vergleich ergibt sich die Reihenfolge aus Ihren Angaben und den veröffentlichten Preisen; die Gewichtung nennen wir jeweils direkt beim Ergebnis.
+        Für alle Anbieter gelten dieselben Kriterien. Anbieter mit Partnerprogramm werden in redaktionellen Übersichten nicht bevorzugt. Übersichten sortieren wir nach der Zahl der
+        erfüllten Prüfkriterien (siehe unten). Im Software-Finder und im Vergleich ergibt sich die Reihenfolge aus Ihren Angaben und den veröffentlichten Preisen; die Gewichtung
+        nennen wir jeweils direkt beim Ergebnis.
+      </p>
+      <p>
+        Davon getrennt zeigen wir auf einigen Seiten ein Feld „Anzeige · Partnerangebote“. Dort erscheinen nur Anbieter, mit denen wir eine Partnerschaft haben. Das Feld ist immer als
+        Anzeige gekennzeichnet und verändert weder Profile noch Prüfkriterien oder die Reihenfolge redaktioneller Listen.
       </p>
       <h2>So entstehen unsere Software-Profile</h2>
       <p>
@@ -55,7 +60,8 @@ export default function Page() {
       </ul>
       <p>
         Jedes Kriterium ist erfüllt, teilweise erfüllt, nicht enthalten, nicht öffentlich angegeben oder für das Produkt nicht relevant. Erfüllt zählt einen Punkt, teilweise einen
-        halben. Nicht relevante Kriterien zählen nicht mit. Der Wert von 0 bis 100 zeigt den Anteil der Punkte an allen relevanten Kriterien. Er misst, wie viele dieser
+        halben. Nicht relevante Kriterien zählen nicht mit. Wir zeigen das Ergebnis als „erfüllt von relevanten Kriterien“, zum Beispiel „8 / 10 Kriterien erfüllt“, und nennen
+        daneben, wie viele Punkte der Anbieter nicht öffentlich angibt. „Nicht öffentlich angegeben“ heißt nicht, dass eine Funktion fehlt. Das Ergebnis misst, welche dieser
         Anforderungen sich öffentlich belegen lassen, und ist keine Gesamtbewertung der Software.
       </p>
       <h2>Rechts- und Steuerthemen</h2>

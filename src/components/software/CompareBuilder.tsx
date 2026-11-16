@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Check, X } from "@phosphor-icons/react";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
+import { AffiliateBadge } from "@/components/ui/Affiliate";
 
 export type CompareItem = {
   slug: string;
@@ -14,8 +15,11 @@ export type CompareItem = {
   entry: string;
   unit: string;
   score: number | null;
+  points: string | null;
+  total: number | null;
   trial: string;
   plans: number;
+  isAffiliate: boolean;
 };
 
 const MAX = 3;
@@ -59,8 +63,9 @@ export function CompareBuilder({ items, filters }: { items: CompareItem[]; filte
           const full = !on && picked.length >= MAX;
           return (
             <li key={s.slug} className={`grid items-center gap-x-6 gap-y-4 py-6 transition-colors md:grid-cols-[150px_1.4fr_1fr_0.8fr_auto] ${on ? "bg-brand-50/60" : ""}`}>
-              <div className="flex items-center md:pl-2">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5 md:flex-col md:items-start md:pl-2">
                 <PartnerLogo slug={s.slug} height={22} maxWidth={120} tile={false} />
+                {s.isAffiliate && <AffiliateBadge />}
               </div>
               <div>
                 <p className="font-data text-[11.5px] uppercase tracking-[0.08em] text-ink-500">{s.category}</p>
@@ -78,10 +83,10 @@ export function CompareBuilder({ items, filters }: { items: CompareItem[]; filte
                 </p>
               </div>
               <div>
-                <p className="font-data text-[11.5px] uppercase tracking-[0.08em] text-ink-500">Kriterienwert</p>
+                <p className="font-data text-[11.5px] uppercase tracking-[0.08em] text-ink-500">Kriterien erfüllt</p>
                 <p className="mt-1 font-data text-[22px] leading-none">
-                  {s.score ?? "–"}
-                  <span className="text-[13px] text-ink-500"> / 100</span>
+                  {s.points ?? "–"}
+                  <span className="text-[13px] text-ink-500"> / {s.total ?? 10}</span>
                 </p>
               </div>
               <div className="flex gap-2 md:justify-end md:pr-2">

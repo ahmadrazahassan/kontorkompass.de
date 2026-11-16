@@ -8,7 +8,8 @@ import { OPERATOR, SITE } from "@/lib/site";
 import { Thumbnail, coverFor } from "@/components/ui/Thumbnail";
 import { Eyebrow, GuideCard, SectionHeading } from "@/components/content/Blocks";
 import { SoftwareShowcase } from "@/components/content/SoftwareShowcase";
-import { getCategories, getDocs, getSoftwareList } from "@/lib/cms";
+import { PartnerOffers } from "@/components/content/PartnerOffers";
+import { getDocs, getSoftwareList, getTopicCategories } from "@/lib/cms";
 
 const QUICK = [
   { label: "E-Rechnung 2027", href: "/ratgeber/e-rechnung-2027-pflicht-unternehmen" },
@@ -40,7 +41,7 @@ export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default async function Home() {
   const [CATEGORIES, DOCS, SOFTWARE] = await Promise.all([
-    getCategories(),
+    getTopicCategories(),
     getDocs(),
     getSoftwareList(),
   ]);
@@ -366,6 +367,9 @@ export default async function Home() {
 
       {/* ============ SOFTWARE ============ */}
       <SoftwareShowcase items={SOFTWARE} />
+
+      {/* ============ ANZEIGE: PARTNERANGEBOTE (only active Werbelinks) ============ */}
+      <PartnerOffers />
 
       {/* ============ METHODIK ============ */}
       <section className="section border-t border-line bg-white">

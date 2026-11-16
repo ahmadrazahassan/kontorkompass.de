@@ -4,9 +4,10 @@ import { ArrowRight, ArrowsLeftRight, Compass } from "@phosphor-icons/react/dist
 import { PageHeader } from "@/components/content/PageShell";
 import { AffiliateDisclosure, PriceBars } from "@/components/content/Blocks";
 import { CompareBuilder, type CompareItem } from "@/components/software/CompareBuilder";
+import { PartnerOffers } from "@/components/content/PartnerOffers";
 import { getCategories, getSoftwareList } from "@/lib/cms";
 import { formatDateShort, formatEur } from "@/lib/format";
-import { checkScore } from "@/lib/pricing";
+import { checkScore, formatPoints } from "@/lib/pricing";
 import { entryUnit } from "@/lib/compare";
 
 export const metadata: Metadata = {
@@ -26,9 +27,13 @@ export default async function Page() {
     categories: s.categories,
     entry: s.entryPrice == null ? "auf Anfrage" : s.entryPrice === 0 ? "kostenloser Tarif" : `ab ${formatEur(s.entryPrice)}`,
     unit: s.entryPrice ? entryUnit(s) : "",
-    score: s.checks?.length ? checkScore(s.checks).score : null,
+    ...(() => {
+      const c = s.checks?.length ? checkScore(s.checks) : null;
+      return { score: c?.score ?? null, points: c ? formatPoints(c.points) : null, total: c?.total ?? null };
+    })(),
     trial: s.trial,
     plans: s.plans.length,
+    isAffiliate: s.isAffiliate,
   })).sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
   const filters = CATEGORIES.filter((c) => SOFTWARE.some((s) => s.categories.includes(c.slug))).map((c) => ({ slug: c.slug, name: c.name }));
   const verified = SOFTWARE.map((s) => s.verified).sort().reverse()[0];
@@ -70,7 +75,7 @@ export default async function Page() {
         <div className="mb-8 flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
           <div>
             <h2 className="t-h2">Alle Software-Profile</h2>
-            <p className="mt-2 text-ink-700">Sortiert nach Kriterienwert. Preise laut Anbieter, zzgl. MwSt.</p>
+            <p className="mt-2 text-ink-700">Sortiert nach erfüllten Prüfkriterien. Preise laut Anbieter, zzgl. MwSt.</p>
           </div>
           <div className="max-w-xl">
             <AffiliateDisclosure />
@@ -84,6 +89,7 @@ export default async function Page() {
           items={SOFTWARE.filter((s) => s.entryPrice).map((s) => ({ label: s.name, value: s.entryPrice as number }))}
         />
       </div>
+      <PartnerOffers />
     </>
   );
 }

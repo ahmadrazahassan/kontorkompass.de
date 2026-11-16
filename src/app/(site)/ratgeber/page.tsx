@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/content/PageShell";
 import { GuideCard } from "@/components/content/Blocks";
 import { Icon } from "@/components/ui/Icons";
-import { getCategories, getDocs } from "@/lib/cms";
+import { getDocs, getTopicCategories } from "@/lib/cms";
 
 export const metadata: Metadata = {
   title: "Ratgeber",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const [CATEGORIES, guides] = await Promise.all([getCategories(), getDocs("ratgeber")]);
+  const [CATEGORIES, guides] = await Promise.all([getTopicCategories(), getDocs("ratgeber")]);
   return (
     <>
       <PageHeader title="Ratgeber" lead="Praxisnahe Leitfäden zu Pflichten, Prozessen und Software: mit Quellen, Rechenbeispielen und Checklisten." eyebrow="Wissen" crumbs={[{ label: "Ratgeber" }]} />

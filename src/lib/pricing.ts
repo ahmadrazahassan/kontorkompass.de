@@ -54,6 +54,14 @@ export function checkScore(checks: NonNullable<Software["checks"]>) {
   const partial = rel.filter((c) => c.status === "partial").length;
   const no = rel.filter((c) => c.status === "no").length;
   const unknown = rel.filter((c) => c.status === "unknown").length;
-  const score = rel.length ? Math.round(((yes + partial * 0.5) / rel.length) * 100) : 0;
-  return { yes, partial, no, unknown, total: rel.length, score };
+  const points = yes + partial * 0.5;
+  // `score` (0–100) is only used for sorting. Readers see `points / total`, never a grade out of 100.
+  const score = rel.length ? Math.round((points / rel.length) * 100) : 0;
+  return { yes, partial, no, unknown, total: rel.length, points, score };
 }
+
+/** Criteria points for display: fulfilled counts 1, partial 0.5 (e.g. "7,5"). */
+export const formatPoints = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 1 });
+
+/** Short reader-facing summary, e.g. "8 / 10 Kriterien erfüllt". */
+export const criteriaLabel = (s: { points: number; total: number }) => `${formatPoints(s.points)} / ${s.total} Kriterien erfüllt`;

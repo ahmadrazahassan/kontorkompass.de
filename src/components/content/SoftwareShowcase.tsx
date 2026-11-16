@@ -3,9 +3,10 @@ import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { Check, Software } from "@/content/data";
 import { getCategories } from "@/lib/cms";
 import { formatDateShort, formatEur } from "@/lib/format";
-import { checkScore } from "@/lib/pricing";
+import { checkScore, formatPoints } from "@/lib/pricing";
 import { PartnerLogo } from "@/components/ui/PartnerLogo";
 import { Button } from "@/components/ui/Button";
+import { AffiliateBadge } from "@/components/ui/Affiliate";
 
 /* ---------- helpers ---------- */
 const MAX = 200; // right end of the price scale in € per month
@@ -61,7 +62,7 @@ export async function SoftwareShowcase({ items }: { items: Software[] }) {
             <h2 id="sw-title" className="t-h1 mt-4 max-w-[18ch]">
               Preise und Prüfkriterien auf einen Blick.
             </h2>
-            <p className="t-lead mt-5 max-w-[56ch]">Jedes Produkt prüfen wir anhand derselben zehn Kriterien und rechnen die veröffentlichten Preise nach. Der Kriterienwert zeigt auf einen Blick, wie viele Anforderungen ein Produkt belegbar erfüllt.</p>
+            <p className="t-lead mt-5 max-w-[56ch]">Jedes Produkt prüfen wir anhand derselben zehn Kriterien und rechnen die veröffentlichten Preise nach. Die Zahl zeigt, wie viele Kriterien ein Produkt laut öffentlichen Angaben erfüllt. Was ein Anbieter nicht öffentlich angibt, weisen wir getrennt aus.</p>
           </div>
           <div className="flex flex-col items-start gap-6 lg:items-end">
             <dl className="grid w-full grid-cols-3 border-y border-line lg:max-w-[460px]">
@@ -161,7 +162,8 @@ export async function SoftwareShowcase({ items }: { items: Software[] }) {
         </figure>
 
         {/* Product cards */}
-        <ul className="-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4" aria-label="Software-Profile">
+        {/* pt-4 on phones: the scroll container clips overflow, and the Werbepartner tab sits 11px above each card. */}
+        <ul className="-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 pt-4 sm:mx-0 sm:pt-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4" aria-label="Software-Profile">
           {rows.map(({ s, e, score }) => (
             <li key={s.slug} className="w-[84%] shrink-0 snap-start sm:w-auto">
               <Link
@@ -169,11 +171,12 @@ export async function SoftwareShowcase({ items }: { items: Software[] }) {
                 className="group relative flex h-full flex-col border border-line bg-white p-6 no-underline transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-brand-500 hover:shadow-[var(--shadow-overlay)]"
                 style={{ borderRadius: 14 }}
               >
+                {s.isAffiliate && <AffiliateBadge tab />}
                 <div className="flex h-7 items-center justify-between gap-3">
                   <PartnerLogo slug={s.slug} height={20} maxWidth={100} tile={false} />
                   {score && score.score === best && (
                     <span className="border border-brand-500/30 bg-brand-50 px-2 py-0.5 font-data text-[11px] uppercase tracking-wider text-brand-700" style={{ borderRadius: 4 }}>
-                      Höchster Wert
+                      Meiste Kriterien
                     </span>
                   )}
                 </div>
@@ -185,11 +188,13 @@ export async function SoftwareShowcase({ items }: { items: Software[] }) {
                 {score && s.checks && (
                   <div className="mt-6">
                     <div className="flex items-baseline gap-1.5">
-                      <span className="font-data text-[44px] font-medium leading-none tracking-[-0.02em]">{score.score}</span>
-                      <span className="font-data text-[15px] text-ink-500">/ 100</span>
+                      <span className="font-data text-[44px] font-medium leading-none tracking-[-0.02em]">{formatPoints(score.points)}</span>
+                      <span className="font-data text-[15px] text-ink-500">/ {score.total} Kriterien</span>
                     </div>
                     <p className="mt-1 text-[13px] text-ink-500">
-                      {score.yes} von {score.total} Kriterien erfüllt{score.partial ? `, ${score.partial} teilweise` : ""}
+                      {score.yes} erfüllt{score.partial ? `, ${score.partial} teilweise` : ""}
+                      {score.no ? `, ${score.no} nicht enthalten` : ""}
+                      {score.unknown ? `, ${score.unknown} nicht öffentlich angegeben` : ""}
                     </p>
                     <div className="mt-3 grid gap-[3px]" style={{ gridTemplateColumns: `repeat(${s.checks.filter((c) => c.status !== "na").length}, 1fr)` }} role="img" aria-label={`Prüfkriterien: ${score.yes} erfüllt, ${score.partial} teilweise, ${score.no} nicht erfüllt, ${score.unknown} nicht belegt`}>
                       {s.checks
@@ -243,7 +248,9 @@ export async function SoftwareShowcase({ items }: { items: Software[] }) {
             ))}
           </ul>
           <p>
-            Preise laut Anbieter, zzgl. MwSt. Wert: erfüllte Kriterien, teilweise erfüllte zählen zur Hälfte.{" "}
+            Preise laut Anbieter, zzgl. MwSt. Kriterien: erfüllte zählen voll, teilweise erfüllte halb. „Nicht belegt“ heißt nicht öffentlich angegeben, nicht: fehlt.{" "}
+            {items.some((s) => s.isAffiliate) &&
+              "„Werbepartner“: Für Abschlüsse über unsere Links erhalten wir gegebenenfalls eine Provision; Kriterien und Reihenfolge ändert das nicht. "}
             <Link href="/methodik" className="inline-flex items-center gap-1 text-brand-700 no-underline hover:underline">
               Zur Methodik <ArrowRight size={13} aria-hidden />
             </Link>

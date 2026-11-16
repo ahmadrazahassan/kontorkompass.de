@@ -118,6 +118,12 @@ export const getCategories = cache(async (): Promise<Category[]> => {
 });
 export const getCategory = async (slug: string) => (await getCategories()).find((c) => c.slug === slug);
 
+/** Topics with at least one published article. Navigation and topic lists use these, so a software-only category (e.g. CRM) never shows as an empty topic. */
+export const getTopicCategories = cache(async (): Promise<Category[]> => {
+  const [cats, docs] = await Promise.all([getCategories(), getDocs()]);
+  return cats.filter((c) => docs.some((d) => d.category === c.slug));
+});
+
 export type DocWithBody = ReturnType<typeof mapDoc>;
 
 export const getDocs = cache(async (kind?: "ratgeber" | "magazin"): Promise<DocWithBody[]> => {
@@ -167,6 +173,30 @@ export const hasActiveAffiliateLinks = cache(async (): Promise<boolean> => {
   const p = await getCms();
   const r = await p.count({ collection: "affiliate-links", where: { isAffiliate: { equals: true }, active: { equals: true } }, overrideAccess: true });
   return r.totalDocs > 0;
+});
+
+/** IDs of software whose /go link is an active Werbelink (for the article notice). */
+export const getAffiliateSoftwareIds = cache(async (): Promise<Set<string>> => {
+  const p = await getCms();
+  const r = await p.find({ collection: "software", limit: 200, depth: 1, pagination: false, overrideAccess: true });
+  return new Set(r.docs.filter((s: any) => typeof s.affiliateLink === "object" && s.affiliateLink?.isAffiliate && s.affiliateLink?.active !== false).map((s: any) => String(s.id)));
+});
+
+/** Software IDs referenced by "Passende Software" boxes in an article body. */
+export function softwareBoxIds(body: unknown): string[] {
+  const ids: string[] = [];
+  JSON.stringify(body ?? {}, (_k, v) => {
+    if (v && typeof v === "object" && v.blockType === "affiliateCta" && v.software != null) ids.push(String(typeof v.software === "object" ? v.software.id : v.software));
+    return v;
+  });
+  return ids;
+}
+
+/** Partner names with an active Werbelink, for the Transparenz page. */
+export const getActivePartners = cache(async (): Promise<string[]> => {
+  const p = await getCms();
+  const r = await p.find({ collection: "affiliate-links", where: { isAffiliate: { equals: true }, active: { equals: true } }, limit: 100, depth: 0, overrideAccess: true });
+  return [...new Set(r.docs.map((d: any) => String(d.partner)))].sort((a, b) => a.localeCompare(b, "de"));
 });
 
 export async function getAffiliateTarget(slug: string) {

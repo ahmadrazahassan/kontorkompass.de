@@ -13,17 +13,23 @@ import {
   SourcesList,
 } from "./Blocks";
 import type { Doc } from "@/content/data";
-import { getCategory, getDocs, hasActiveAffiliateLinks } from "@/lib/cms";
+import { getAffiliateSoftwareIds, getCategory, getDocs, hasActiveAffiliateLinks, softwareBoxIds } from "@/lib/cms";
 import { AUTHOR, OPERATOR, SITE } from "@/lib/site";
 import { LinkedInLogo } from "@/components/ui/LinkedInLogo";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
 import { Thumbnail, coverFor } from "@/components/ui/Thumbnail";
+import { PartnerOffers, getPartnerOffers } from "./PartnerOffers";
 
 export async function ArticlePage({ doc, children }: { doc: Doc; children: ReactNode }) {
   const cat = await getCategory(doc.category);
   const DOCS = await getDocs();
   // The ad notice only shows while a partner programme is really active; otherwise links are plain editorial links.
-  const showAdNotice = doc.hasAffiliate && (await hasActiveAffiliateLinks());
+  // Partner offers (ad block) for this topic; when present, the page carries Werbelinks and gets the notice too.
+  const offers = await getPartnerOffers({ category: doc.category, limit: 2 });
+  // Notice when the page really carries Werbelinks: a software box whose link is a Werbelink, the partner block, or the editor's manual flag.
+  const affiliateIds = await getAffiliateSoftwareIds();
+  const boxIsAffiliate = softwareBoxIds((doc as { body?: unknown }).body).some((id) => affiliateIds.has(id));
+  const showAdNotice = boxIsAffiliate || offers.length > 0 || (doc.hasAffiliate && (await hasActiveAffiliateLinks()));
   const isGuide = doc.kind === "ratgeber";
   const related = DOCS.filter((d) => d.slug !== doc.slug).slice(0, 3);
   const url = `${SITE.url}/${doc.kind}/${doc.slug}`;
@@ -166,8 +172,9 @@ export async function ArticlePage({ doc, children }: { doc: Doc; children: React
             </Callout>
           )}
 
-          <SourcesList ids={doc.sourceIds} />
+          {offers.length > 0 && <PartnerOffers category={doc.category} limit={2} compact />}
 
+          <SourcesList ids={doc.sourceIds} />
 
           <div className="mt-10 flex items-start gap-4 border-t border-line pt-8">
             <Avatar initials={AUTHOR.initials} src={AUTHOR.photo} alt={`${AUTHOR.name}, ${AUTHOR.role}`} size={56} />

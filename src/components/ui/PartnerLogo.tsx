@@ -6,6 +6,9 @@ const LOGOS: Record<string, { src: string; ratio: number; name: string }> = {
   sevdesk: { src: "/logos/sevdesk.svg", ratio: 124 / 36, name: "sevdesk" },
   weclapp: { src: "/logos/weclapp.svg", ratio: 379.5 / 70.7, name: "weclapp" },
   personio: { src: "/logos/personio.svg", ratio: 122 / 24, name: "Personio" },
+  // easybill.de header logo; Pipedrive header logo from pipedrive.com/de with the fill the vendor's own CSS applies (#017737). Both taken 16.11.2026.
+  easybill: { src: "/logos/easybill.svg", ratio: 210 / 52, name: "easybill" },
+  pipedrive: { src: "/logos/pipedrive.svg", ratio: 121 / 26, name: "Pipedrive" },
 };
 
 export function vendorKey(softwareSlug: string): keyof typeof LOGOS | null {
@@ -14,6 +17,8 @@ export function vendorKey(softwareSlug: string): keyof typeof LOGOS | null {
   if (softwareSlug.startsWith("sevdesk")) return "sevdesk";
   if (softwareSlug.startsWith("weclapp")) return "weclapp";
   if (softwareSlug.startsWith("personio")) return "personio";
+  if (softwareSlug.startsWith("easybill")) return "easybill";
+  if (softwareSlug.startsWith("pipedrive")) return "pipedrive";
   return null;
 }
 
