@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Fira_Sans, Saira } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteAnalytics } from "@/components/layout/SiteAnalytics";
 import { DEFAULT_OG_IMAGE, SITE } from "@/lib/site";
 import { getCategories, getDocs, getSoftwareList, getTopicCategories } from "@/lib/cms";
 
@@ -32,6 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header categories={categories} counts={counts} software={menuSoftware} />
         <main id="inhalt">{children}</main>
         <Footer />
+        <SiteAnalytics />
       </body>
     </html>
   );

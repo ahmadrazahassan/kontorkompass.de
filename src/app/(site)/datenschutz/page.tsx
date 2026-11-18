@@ -10,7 +10,8 @@ export default function Page() {
       <p>
         Mit dieser Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten beim Besuch von {SITE.domain} verarbeitet werden, zu welchem
         Zweck, auf welcher Rechtsgrundlage und welche Rechte Sie haben. Wir verarbeiten so wenige Daten wie möglich: Diese Website setzt keine Cookies zu Analyse- oder
-        Werbezwecken, bindet keine Inhalte von Drittanbietern ein und verwendet kein Tracking.
+        Werbezwecken, bindet keine Inhalte von Drittanbietern ein und erstellt keine Nutzungsprofile. Für eine cookielose Reichweitenmessung mit zusammengefassten
+        Statistiken nutzen wir Vercel Web Analytics (Abschnitt 8).
       </p>
 
       <h2>1. Verantwortliche Stelle</h2>
@@ -73,8 +74,8 @@ export default function Page() {
 
       <h2>4. Cookies und lokale Speicherung</h2>
       <p>
-        Beim normalen Besuch dieser Website setzen wir keine Cookies und lesen keine Informationen aus Ihrem Endgerät aus, die nicht für die Bereitstellung der Website
-        unbedingt erforderlich sind. Eine Einwilligung ist deshalb nicht erforderlich. Einzelheiten finden Sie in den <a href="/cookie-einstellungen">Cookie-Einstellungen</a>.
+        Beim normalen Besuch dieser Website setzen wir keine Cookies und legen keine Kennungen auf Ihrem Endgerät ab. Das gilt auch für die Reichweitenmessung mit
+        Vercel Web Analytics (Abschnitt 8). Einzelheiten finden Sie in den <a href="/cookie-einstellungen">Cookie-Einstellungen</a>.
       </p>
 
       <h2>5. Schriftarten</h2>
@@ -120,10 +121,27 @@ export default function Page() {
         DSGVO).
       </p>
 
-      <h2>8. Reichweitenmessung</h2>
+      <h2>8. Reichweitenmessung mit Vercel Web Analytics</h2>
       <p>
-        Wir setzen keine Werkzeuge zur Reichweitenmessung oder Webanalyse ein (zum Beispiel Google Analytics) und erstellen keine Nutzungsprofile. Sollte sich das
-        ändern, passen wir diese Datenschutzerklärung vorher an und holen, soweit erforderlich, Ihre Einwilligung ein.
+        Um zu verstehen, welche Inhalte gelesen werden, und unsere Ratgeber zu verbessern, nutzen wir Vercel Web Analytics der Vercel Inc. (USA). Der Dienst setzt keine
+        Cookies und legt keine Kennungen auf Ihrem Endgerät ab. Bei jedem Seitenaufruf werden folgende Angaben an Vercel übermittelt:
+      </p>
+      <ul>
+        <li>Zeitpunkt des Aufrufs</li>
+        <li>aufgerufene Seite ohne Suchparameter (im Software-Vergleich nur die ausgewählten Produkte)</li>
+        <li>Referrer-URL (die zuvor besuchte Seite), sofern übermittelt</li>
+        <li>ungefährer Standort (Land, Region, Stadt), abgeleitet aus der IP-Adresse</li>
+        <li>Betriebssystem, Browser und Gerätetyp, jeweils mit Version</li>
+      </ul>
+      <p>
+        Vercel unterscheidet Besuche über einen Hashwert, der aus der jeweiligen Anfrage gebildet wird; diese Kennung wird nach 24 Stunden verworfen. Wir erhalten
+        ausschließlich zusammengefasste Statistiken. Eine Zuordnung zu einzelnen Personen, ein Abgleich über andere Websites hinweg oder die Erstellung von
+        Nutzungsprofilen findet nicht statt.
+      </p>
+      <p>
+        Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Auswertung der Nutzung unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Die Verarbeitung
+        erfolgt im Rahmen des in Abschnitt 2 genannten Vertrags über die Auftragsverarbeitung mit Vercel; für die Übermittlung in die USA gilt das dort Gesagte. Sie
+        können der Verarbeitung jederzeit widersprechen (Abschnitt 11). Gängige Inhaltsblocker verhindern die Messung ebenfalls.
       </p>
 
       <h2>9. Links zu Anbietern und Werbelinks</h2>
@@ -136,7 +154,7 @@ export default function Page() {
       <h2>10. Speicherdauer</h2>
       <p>
         Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Server-Logdaten
-        werden vom Hosting-Anbieter nach kurzer Zeit automatisch gelöscht. Newsletter-Daten speichern wir bis zu Ihrer Abmeldung; den Nachweis Ihrer Einwilligung
+        werden vom Hosting-Anbieter nach kurzer Zeit automatisch gelöscht. Bei der Reichweitenmessung verwirft Vercel die Besuchskennung nach 24 Stunden (Abschnitt 8). Newsletter-Daten speichern wir bis zu Ihrer Abmeldung; den Nachweis Ihrer Einwilligung
         bis zu drei Jahre danach (Abschnitt 7).
       </p>
 
